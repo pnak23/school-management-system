@@ -12,5 +12,8 @@ folder project in VS code
 - npm run dev
 
 #open second terminal
+- composer install
 - php artisan serve
+
+** make sure you have file .env
 
