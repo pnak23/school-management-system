@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Library Services - {{ config('app.name', 'School Management System') }}</title>
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700&display=swap" rel="stylesheet" />
-    
+
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <style>
         /* ===== Variables ===== */
         :root {
@@ -29,7 +30,12 @@
             --glass-blur: 15px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Figtree', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #06b6d4 100%);
@@ -53,7 +59,7 @@
         .header-section h1 {
             font-size: 3rem;
             font-weight: 700;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .header-section p {
@@ -73,7 +79,7 @@
             backdrop-filter: blur(var(--glass-blur));
             border-radius: 25px;
             padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
             transition: all 0.4s ease;
             text-decoration: none;
             color: white;
@@ -86,14 +92,16 @@
 
         .service-card:hover {
             transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
         }
 
         .service-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 5px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
             transform: scaleX(0);
             transition: transform 0.4s ease;
@@ -104,9 +112,12 @@
         }
 
         .service-icon {
-            width: 80px; height: 80px;
+            width: 80px;
+            height: 80px;
             border-radius: 20px;
-            display: flex; align-items: center; justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 2.5rem;
             margin-bottom: 20px;
             transition: transform 0.3s ease;
@@ -116,12 +127,29 @@
             transform: scale(1.15) rotate(5deg);
         }
 
-        .service-icon.primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
-        .service-icon.success { background: linear-gradient(135deg, var(--success), #059669); }
-        .service-icon.info { background: linear-gradient(135deg, var(--info), #0891b2); }
-        .service-icon.warning { background: linear-gradient(135deg, var(--warning), #d97706); }
-        .service-icon.secondary { background: linear-gradient(135deg, var(--secondary), #6d28d9); }
-        .service-icon.danger { background: linear-gradient(135deg, var(--danger), #dc2626); }
+        .service-icon.primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+
+        .service-icon.success {
+            background: linear-gradient(135deg, var(--success), #059669);
+        }
+
+        .service-icon.info {
+            background: linear-gradient(135deg, var(--info), #0891b2);
+        }
+
+        .service-icon.warning {
+            background: linear-gradient(135deg, var(--warning), #d97706);
+        }
+
+        .service-icon.secondary {
+            background: linear-gradient(135deg, var(--secondary), #6d28d9);
+        }
+
+        .service-icon.danger {
+            background: linear-gradient(135deg, var(--danger), #dc2626);
+        }
 
         .service-title {
             font-size: 1.5rem;
@@ -132,7 +160,7 @@
         .service-description {
             font-size: 1rem;
             text-align: center;
-            color: rgba(255,255,255,0.85);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.5;
         }
 
@@ -148,7 +176,7 @@
         }
 
         .footer-section p {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .footer-links {
@@ -173,17 +201,33 @@
 
         /* ===== Responsive ===== */
         @media (max-width: 768px) {
-            .header-section h1 { font-size: 2.5rem; }
-            .service-card { padding: 25px; }
+            .header-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
         }
 
         @media (max-width: 480px) {
-            body { padding: 10px; }
-            .header-section h1 { font-size: 2rem; }
-            .service-icon { width: 70px; height: 70px; font-size: 2rem; }
+            body {
+                padding: 10px;
+            }
+
+            .header-section h1 {
+                font-size: 2rem;
+            }
+
+            .service-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="user-page-container">
         <!-- Header -->
@@ -200,7 +244,8 @@
                     <i class="fas fa-door-open"></i>
                 </div>
                 <h3 class="service-title">Library Check-in/Out</h3>
-                <p class="service-description">Check in when entering the library and check out when leaving. Track your library visits.</p>
+                <p class="service-description">Check in when entering the library and check out when leaving. Track your
+                    library visits.</p>
             </a>
 
             <!-- Start Reading -->
@@ -209,7 +254,8 @@
                     <i class="fas fa-book-open"></i>
                 </div>
                 <h3 class="service-title">Start Reading</h3>
-                <p class="service-description">Begin a reading session for any book. Track your reading time and activities.</p>
+                <p class="service-description">Begin a reading session for any book. Track your reading time and
+                    activities.</p>
             </a>
 
             <!-- Browse Books -->
@@ -218,7 +264,8 @@
                     <i class="fas fa-book"></i>
                 </div>
                 <h3 class="service-title">Browse Books</h3>
-                <p class="service-description">Search and browse our library collection. Reserve unavailable books or borrow available ones.</p>
+                <p class="service-description">Search and browse our library collection. Reserve unavailable books or
+                    borrow available ones.</p>
             </a>
 
             <!-- Reports -->
@@ -227,7 +274,8 @@
                     <i class="fas fa-chart-bar"></i>
                 </div>
                 <h3 class="service-title">Library Reports</h3>
-                <p class="service-description">View library statistics, collection summaries, overdue loans, and various reports.</p>
+                <p class="service-description">View library statistics, collection summaries, overdue loans, and various
+                    reports.</p>
             </a>
 
             <!-- About -->
@@ -245,7 +293,8 @@
                     <i class="fas fa-envelope"></i>
                 </div>
                 <h3 class="service-title">Contact Us</h3>
-                <p class="service-description">Get in touch with us. Send us a message or find our contact information.</p>
+                <p class="service-description">Get in touch with us. Send us a message or find our contact information.
+                </p>
             </a>
         </div>
 
@@ -257,7 +306,8 @@
                 <a href="{{ route('about') }}" class="footer-link"><i class="fas fa-info-circle"></i> About</a>
                 <a href="{{ route('contact') }}" class="footer-link"><i class="fas fa-envelope"></i> Contact</a>
                 @auth
-                    <a href="{{ route('dashboard') }}" class="footer-link"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a href="{{ route('dashboard') }}" class="footer-link"><i class="fas fa-tachometer-alt"></i>
+                        Dashboard</a>
                 @else
                     <a href="{{ route('login') }}" class="footer-link"><i class="fas fa-sign-in-alt"></i> Login</a>
                 @endauth
@@ -268,4 +318,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -4,14 +4,14 @@
             'title' => 'MAIN',
             'items' => [
                 [
-                    'label' => 'Dashboard',
+                    'label' => __('menu.dashboard'),
                     'route' => 'dashboard',
                     'icon' => 'home',
                     'badge' => null,
                     'color' => 'indigo',
                 ],
                 [
-                    'label' => 'Reading Dashboard',
+                    'label' =>  __('menu.reading_dashboard'),
                     'route' => 'admin.library.reading-dashboard.index',
                     'icon' => 'home',
                     'badge' => 'Analytics',
@@ -24,7 +24,7 @@
             'title' => 'USER MANAGEMENT',
             'items' => [
                 [
-                    'label' => 'Users',
+                    'label' => __('menu.users'),
                     'route' => 'admin.users.index',
                     'icon' => 'users',
                     'badge' => null,
@@ -32,7 +32,7 @@
                     'roles' => ['admin', 'manager', 'staff'],
                 ],
                 [
-                    'label' => 'Roles',
+                    'label' => __('menu.roles'),
                     'route' => 'admin.roles.index',
                     'icon' => 'shield-check',
                     'badge' => null,
@@ -45,63 +45,63 @@
             'title' => 'HR MANAGEMENT',
             'items' => [
                 [
-                    'label' => 'User Page',
+                    'label' => __('menu.user_page'),
                     'route' => 'user_page.index',
                     'icon' => 'academic-cap',
                     'badge' => null,
                     'color' => 'blue',
                 ],
                 [
-                    'label' => 'Teachers',
+                    'label' => __('menu.teachers'),
                     'route' => 'admin.teachers.index',
                     'icon' => 'academic-cap',
                     'badge' => null,
                     'color' => 'blue',
                 ],
                 [
-                    'label' => 'Students',
+                    'label' => __('menu.students'),
                     'route' => 'admin.students.index',
                     'icon' => 'user',
                     'badge' => null,
                     'color' => 'blue',
                 ],
                 [
-                    'label' => 'Staff',
+                    'label' => __('menu.staff'),
                     'route' => 'admin.staff.index',
                     'icon' => 'identification',
                     'badge' => null,
                     'color' => 'cyan',
                 ],
                 [
-                    'label' => 'Guests',
+                    'label' => __('menu.guests'),
                     'route' => 'admin.library.guests.index',
                     'icon' => 'identification',
                     'badge' => null,
                     'color' => 'cyan',
                 ],
                 [
-                    'label' => 'Departments',
+                    'label' => __('menu.departments'),
                     'route' => 'admin.departments.index',
                     'icon' => 'office-building',
                     'badge' => null,
                     'color' => 'cyan',
                 ],
                 [
-                    'label' => 'Positions',
+                    'label' => __('menu.positions'),
                     'route' => 'admin.positions.index',
                     'icon' => 'briefcase',
                     'badge' => null,
                     'color' => 'cyan',
                 ],
                 [
-                    'label' => 'Employment Types',
+                    'label' => __('menu.emploment_type'),
                     'route' => 'admin.employment-types.index',
                     'icon' => 'briefcase',
                     'badge' => null,
                     'color' => 'cyan',
                 ],
                 [
-                    'label' => 'QR: User Page',
+                    'label' => __('menu.qr_user_page'),
                     'route' => 'qr.library.user_page.qr-generator',
                     'icon' => 'briefcase',
                     'badge' => 'Services',
@@ -114,7 +114,7 @@
             'title' => 'LOCATION',
             'items' => [
                 [
-                    'label' => 'Provinces',
+                    'label' => __('menu.provinces'),
                     'route' => 'provinces.index',
                     'icon' => 'location',
                     'badge' => null,
@@ -122,7 +122,7 @@
                     'roles' => ['admin', 'manager', 'staff'],
                 ],
                 [
-                    'label' => 'Districts',
+                    'label' => __('menu.districts'),
                     'route' => 'districts.index',
                     'icon' => 'location',
                     'badge' => null,
@@ -130,7 +130,7 @@
                     'roles' => ['admin', 'manager', 'staff'],
                 ],
                 [
-                    'label' => 'Communes',
+                    'label' => __('menu.communes'),
                     'route' => 'communes.index',
                     'icon' => 'location',
                     'badge' => null,
@@ -138,7 +138,7 @@
                     'roles' => ['admin', 'manager', 'staff'],
                 ],
                 [
-                    'label' => 'Villagese',
+                    'label' => __('menu.villages'),
                     'route' => 'villages.index',
                     'icon' => 'location',
                     'badge' => null,
@@ -151,35 +151,35 @@
             'title' => 'LIBRARY MANAGEMENT',
             'items' => [
                 [
-                    'label' => 'Book Categories',
+                    'label' => __('menu.book_categories'),
                     'route' => 'admin.library.categories.index',
                     'icon' => 'book-open',
                     'badge' => null,
                     'color' => 'blue',
                 ],
                 [
-                    'label' => 'Publishers',
+                    'label' => __('menu.publishers'),
                     'route' => 'admin.library.publishers.index',
                     'icon' => 'book-open',
                     'badge' => null,
                     'color' => 'blue',
                 ],
                 [
-                    'label' => 'Authors',
+                    'label' =>__('menu.authors'),
                     'route' => 'admin.library.authors.index',
                     'icon' => 'book-open',
                     'badge' => null,
                     'color' => 'blue',
                 ],
                 [
-                    'label' => 'Shelves',
+                    'label' => __('menu.shelves'),
                     'route' => 'admin.library.shelves.index',
                     'icon' => 'book-open',
                     'badge' => null,
                     'color' => 'blue',
                 ],
                 [
-                    'label' => 'Books / Items',
+                    'label' => __('menu.books_items'),
                     'route' => 'admin.library.items.index',
                     'icon' => 'book-open',
                     'badge' => null,
@@ -187,49 +187,49 @@
                     'roles' => ['admin', 'manager', 'staff'],
                 ],
                 [
-                    'label' => 'Book Copies',
+                    'label' => __('menu.book_copies'),
                     'route' => 'admin.library.copies.index',
                     'icon' => 'barcode',
                     'badge' => null,
                     'color' => 'blue',
                 ],
                 [
-                    'label' => 'Loans',
+                    'label' => __('menu.loans'),
                     'route' => 'admin.library.loans.index',
                     'icon' => 'arrow-path',
                     'badge' => 'New',
                     'color' => 'orange',
                 ],
                 [
-                    'label' => 'Fines',
+                    'label' => __('menu.fines'),
                     'route' => 'admin.library.fines.index',
                     'icon' => 'currency-dollar',
                     'badge' => 'New',
                     'color' => 'orange',
                 ],
                 [
-                    'label' => 'Visits',
+                    'label' => __('menu.visits'),
                     'route' => 'admin.library.visits.index',
                     'icon' => 'currency-dollar',
                     'badge' => 'New',
                     'color' => 'orange',
                 ],
                 [
-                    'label' => 'QR Check-in / Check-out',
+                    'label' => __('menu.qr_check_in_out'),
                     'route' => 'qr.library.qr-generator',
                     'icon' => 'qr-code',
                     'badge' => 'Entry',
                     'color' => 'purple',
                 ],
                 [
-                    'label' => 'QR: Start Reading',
+                    'label' => __('menu.qr_start_reading'),
                     'route' => 'qr.library.start-reading.qr-generator',
                     'icon' => 'qr-code',
                     'badge' => 'New',
                     'color' => 'purple',
                 ],
                 [
-                    'label' => 'QR: Books Report',
+                    'label' => __('menu.qr_books_report'),
                     'route' => 'qr.library.books-report.qr-generator',
                     'icon' => 'qr-code',
                     'badge' => 'QR',
@@ -237,7 +237,7 @@
                     'roles' => ['admin', 'manager', 'staff'],
                 ],
                 [
-                    'label' => 'Stock Taking',
+                    'label' => __('menu.stock_taking'),
                     'route' => 'admin.library.stock-takings.index',
                     'icon' => 'qr-code',
                     'badge' => 'Inventory',
@@ -245,7 +245,7 @@
                     'roles' => ['admin', 'manager', 'staff'],
                 ],
                 [
-                    'label' => 'Reservations',
+                    'label' => __('menu.reservations'),
                     'route' => 'admin.library.reservations.index',
                     'icon' => 'qr-code',
                     'badge' => 'Queue',
@@ -259,7 +259,7 @@
             'title' => 'REPORTS',
             'items' => [
                 [
-                    'label' => 'Overdue Loans',
+                    'label' => __('menu.overdue_loans'),
                     'route' => 'admin.library.reports.overdue_loans.index',
                     'icon' => 'exclamation-circle',
                     'badge' => 'Report',
@@ -267,7 +267,7 @@
                     'roles' => ['admin', 'manager'],
                 ],
                 [
-                    'label' => 'Active Loans',
+                    'label' => __('menu.active_loans'),
                     'route' => 'admin.library.reports.active_loans.index',
                     'icon' => 'book-open',
                     'badge' => 'Report',
@@ -275,7 +275,7 @@
                     'roles' => ['admin', 'manager'],
                 ],
                 [
-                    'label' => 'Outstanding Fines',
+                    'label' => __('menu.outstanding_fines'),
                     'route' => 'admin.library.reports.outstanding_fines.index',
                     'icon' => 'book-open',
                     'badge' => 'Report',
@@ -283,7 +283,7 @@
                     'roles' => ['admin', 'manager'],
                 ],
                 [
-                    'label' => 'Collection Summary',
+                    'label' => __('menu.collection_summary'),
                     'route' => 'admin.library.reports.collection_summary.index',
                     'icon' => 'book-open',
                     'badge' => 'Report',
@@ -291,7 +291,7 @@
                     'roles' => ['admin', 'manager'],
                 ],
                 [
-                    'label' => 'Daily Visit Statistics',
+                    'label' => __('menu.daily_visit_statistics'),
                     'route' => 'admin.library.reports.daily_visits.index',
                     'icon' => 'book-open',
                     'badge' => 'Report',
@@ -299,7 +299,7 @@
                     'roles' => ['admin', 'manager'],
                 ],
                 [
-                    'label' => 'Books Report',
+                    'label' => __('menu.books_report'),
                     'route' => 'admin.library.books_report.index',
                     'icon' => 'book-open',
                     'badge' => 'Report',
@@ -313,14 +313,14 @@
             'title' => 'SYSTEM',
             'items' => [
                 [
-                    'label' => 'Settings',
+                    'label' => __('menu.settings'),
                     'route' => 'profile.edit',
                     'icon' => 'cog',
                     'badge' => null,
                     'color' => 'slate',
                 ],
                 [
-                    'label' => 'Backup & Restore',
+                    'label' => __('menu.backup_restore'),
                     'route' => 'backup.index',
                     'icon' => 'cog',
                     'badge' => null,
@@ -328,21 +328,21 @@
                     'roles' => ['admin'],
                 ],
                 [
-                    'label' => 'Activity Logs',
+                    'label' => __('menu.activity_logs'),
                     'route' => 'logs.index',
                     'icon' => 'clock',
                     'badge' => null,
                     'color' => 'slate',
                 ],
                 [
-                    'label' => 'Reading Logs',
+                    'label' => __('menu.reading_logs'),
                     'route' => 'admin.library.reading-dashboard.index',
                     'icon' => 'book-open',
                     'badge' => null,
                     'color' => 'indigo',
                 ],
                 [
-                    'label' => 'Logout',
+                    'label' => __('menu.logout'),
                     'route' => 'logout',
                     'icon' => 'arrow-left-on-rectangle',
                     'badge' => null,
@@ -512,7 +512,7 @@
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <button type="submit"
-                                        class="flex items-center w-full px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition">
+                                        class="flex items-center w-full px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition title-sidebar">
                                         <svg class="h-5 w-5 mr-3" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24">
                                             {!! $icons[$item['icon']] ?? $icons['arrow-left-on-rectangle'] !!}
@@ -529,7 +529,7 @@
                                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         {!! $icons[$item['icon']] ?? $icons['home'] !!}
                                     </svg>
-                                    <span class="relative flex-1 min-w-0 truncate">
+                                    <span class="relative flex-1 min-w-0 truncate title-sidebar">
                                         {{ $item['label'] }}
                                     </span>
                                 </a>
