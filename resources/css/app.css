@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== NAVBAR STYLE ===== */
+
+.navbar-glass {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: linear-gradient(135deg, #ffffff, #f9fafb);
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+}
+
+.logo-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(99,102,241,0.45);
+    transition: transform .25s;
+}
+
+.logo-box:hover {
+    transform: rotate(-6deg) scale(1.05);
+}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 18px;
+    color: #111827;
+    letter-spacing: 0.3px;
+}
+
+/* NAV ITEMS */
+.nav-item {
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #374151;
+    transition: all .25s ease;
+}
+
+.nav-item:hover {
+    background: #eef2ff;
+    color: #4f46e5;
+    transform: translateY(-1px);
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+    box-shadow: 0 8px 22px rgba(99,102,241,0.45);
+}
+
+/* ICON BUTTONS */
+.icon-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #374151;
+    position: relative;
+    transition: all .25s ease;
+}
+
+.icon-circle:hover {
+    background: #eef2ff;
+    color: #4f46e5;
+    transform: translateY(-2px);
+}
+
+.icon-circle.danger:hover {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* BADGE */
+.notify-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background: #ef4444;
+    color: white;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 999px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* USER */
+.avatar-img,
+.avatar-fallback {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 3px solid #e0e7ff;
+    box-shadow: 0 6px 18px rgba(99,102,241,0.4);
+    object-fit: cover;
+}
+
+.avatar-fallback {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+}
+
+.user-name {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+
+
+.nav-link {
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: 500;
+    color: white;
+    transition: all .25s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-1px);
+}
+
+.nav-link.active {
+    background: white;
+    color: #4f46e5;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.mobile-link {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: #1f2937;
+    background: #f9fafb;
+}
+
+.mobile-link:hover {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+
+
+/* ===== Sidebar Link Animation ===== */
+.sidebar-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+.sidebar-link::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(99,102,241,0.15),
+        rgba(139,92,246,0.15),
+        rgba(99,102,241,0.15)
+    );
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: 0.5s ease;
+}
+
+.sidebar-link:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sidebar-link:hover {
+    transform: translateX(6px);
+}
+
+.sidebar-link.active {
+    background: rgba(99,102,241,0.12);
+    color: rgb(79,70,229);
+    font-weight: 600;
+}
+
+/* ===== Icon Animation ===== */
+.sidebar-link svg {
+    transition: transform 0.35s ease;
+}
+
+.sidebar-link:hover svg {
+    transform: scale(1.15) rotate(2deg);
+}
+
+/* ===== Section Title ===== */
+.sidebar-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: #9ca3af;
+    padding: 0.5rem 1rem;
+}
+
+/* .badge-sidebar{
+    position: absolute;
+    top: 0;
+    right: 0;
+} */
