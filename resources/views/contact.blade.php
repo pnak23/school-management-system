@@ -75,13 +75,13 @@
 
                     <ul class="space-y-5 text-sm opacity-90">
                         <li class="flex gap-4">
-                            📍 <span>123 Education Street, City, Country</span>
+                            📍 <span>Battambang Province, Cambodia</span>
                         </li>
                         <li class="flex gap-4">
-                            ✉️ <span>info@schoolmanagement.com</span>
+                            ✉️ <span>povmuny2@gmail.com</span>
                         </li>
                         <li class="flex gap-4">
-                            📞 <span>+855 21 000 000</span>
+                            📞 <span>+855 88 900 2025</span>
                         </li>
                         <li class="flex gap-4">
                             ⏰ <span>Mon – Fri: 9AM – 6PM</span>
@@ -100,9 +100,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="text-center text-xs opacity-60 pb-6">
-        © {{ date('Y') }} School Management System
-    </footer>
+    @include('layouts.footer')
 
 </div>
 

@@ -11,7 +11,7 @@
                     'color' => 'indigo',
                 ],
                 [
-                    'label' =>  __('menu.reading_dashboard'),
+                    'label' => __('menu.reading_dashboard'),
                     'route' => 'admin.library.reading-dashboard.index',
                     'icon' => 'home',
                     'badge' => 'Analytics',
@@ -94,7 +94,7 @@
                     'color' => 'cyan',
                 ],
                 [
-                    'label' => __('menu.emploment_type'),
+                    'label' => __('menu.employment_types'),
                     'route' => 'admin.employment-types.index',
                     'icon' => 'briefcase',
                     'badge' => null,
@@ -165,7 +165,7 @@
                     'color' => 'blue',
                 ],
                 [
-                    'label' =>__('menu.authors'),
+                    'label' => __('menu.authors'),
                     'route' => 'admin.library.authors.index',
                     'icon' => 'book-open',
                     'badge' => null,
@@ -179,7 +179,7 @@
                     'color' => 'blue',
                 ],
                 [
-                    'label' => __('menu.books_items'),
+                    'label' => __('menu.books'),
                     'route' => 'admin.library.items.index',
                     'icon' => 'book-open',
                     'badge' => null,
@@ -483,65 +483,116 @@
     ];
 @endphp
 
-<aside class="relative w-64 bg-white shadow-xl h-full overflow-y-auto">
-    <div class="p-4 space-y-2">
+<!-- Sidebar Wrapper -->
+<div x-data="{ open: true }" class="flex">
 
-        <h2 class="text-lg font-bold text-gray-800 mb-4">
-            Menu
-        </h2>
+    <!-- Sidebar -->
+    <aside x-data="{ open: true }" :class="open ? 'w-64' : 'w-16'"
+        class="relative bg-white shadow-xl h-full transition-all duration-300 overflow-hidden">
 
-        <nav class="space-y-4">
 
+        <!-- Menu -->
+        <nav class="flex-1 flex flex-col mt-4">
             @foreach ($sidebarMenu as $section)
-                {{-- Section Title --}}
-                <h3 class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                <h3 :class="{ 'hidden': !open }"
+                    class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider transition-all duration-300">
                     {{ $section['title'] }}
                 </h3>
 
-                {{-- Section Items --}}
                 <div class="space-y-1">
                     @foreach ($section['items'] as $item)
                         @php
                             $isActive = request()->routeIs($item['route'] . '*');
-                            $roles = $item['roles'] ?? null; // get allowed roles
+                            $roles = $item['roles'] ?? null;
                             $canSee = !$roles || (auth()->check() && auth()->user()->hasAnyRole($roles));
+                            $icon = $icons[$item['icon']] ?? $icons['home'];
                         @endphp
 
                         @if ($canSee)
+                            {{-- LOGOUT --}}
                             @if ($item['route'] === 'logout')
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
                                     <button type="submit"
-                                        class="flex items-center w-full px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition title-sidebar">
-                                        <svg class="h-5 w-5 mr-3" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            {!! $icons[$item['icon']] ?? $icons['arrow-left-on-rectangle'] !!}
+                                        class="group relative flex items-center w-full px-4 py-3 rounded-lg
+                                               text-gray-700 hover:bg-red-50 hover:text-red-600 transition">
+
+                                        <!-- Icon -->
+                                        <svg class="h-5 w-5 shrink-0 text-gray-500 group-hover:text-red-600"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            {!! $icon !!}
                                         </svg>
-                                        {{ $item['label'] }}
+
+                                        <!-- Label (expanded) -->
+                                        <span x-show="open" x-transition class="ml-3 truncate">
+                                            {{ $item['label'] }}
+                                        </span>
+
+                                        <!-- Tooltip (collapsed) -->
+                                        <span x-show="!open" x-cloak
+                                            class="absolute left-full ml-3 px-2 py-1 text-xs
+                                                   bg-gray-900 text-white rounded shadow
+                                                   opacity-0 group-hover:opacity-100
+                                                   transition whitespace-nowrap z-50">
+                                            {{ $item['label'] }}
+                                        </span>
+
                                     </button>
                                 </form>
+
+                                {{-- NORMAL LINK --}}
                             @else
                                 <a href="{{ route($item['route']) }}"
-                                    class="group flex items-center gap-3 px-4 py-3 rounded-lg
-                                   text-gray-700 hover:bg-indigo-50 hover:text-indigo-600
-                                   relative overflow-visible {{ request()->routeIs($item['route'] . '*') ? 'bg-indigo-50 text-indigo-600' : '' }}">
-                                    <svg class="h-5 w-5 shrink-0 text-gray-500 group-hover:text-indigo-600"
+                                    class="group relative flex items-center w-full px-4 py-3 rounded-lg
+                                          transition
+                                          {{ $isActive
+                                              ? 'bg-indigo-50 text-indigo-600 font-semibold'
+                                              : 'text-gray-700 hover:bg-indigo-50 hover:text-indigo-600' }}">
+
+                                    <!-- Icon -->
+                                    <svg class="h-5 w-5 shrink-0
+                                        {{ $isActive ? 'text-indigo-600' : 'text-gray-500 group-hover:text-indigo-600' }}"
                                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        {!! $icons[$item['icon']] ?? $icons['home'] !!}
+                                        {!! $icon !!}
                                     </svg>
-                                    <span class="relative flex-1 min-w-0 truncate title-sidebar">
+
+                                    <!-- Label (expanded) -->
+                                    <span x-show="open" x-transition class="ml-3 truncate">
                                         {{ $item['label'] }}
                                     </span>
+
+                                    <!-- Tooltip (collapsed) -->
+                                    <span x-show="!open" x-cloak
+                                        class="absolute left-full ml-3 px-2 py-1 text-xs
+                                               bg-gray-900 text-white rounded shadow
+                                               opacity-0 group-hover:opacity-100
+                                               transition whitespace-nowrap z-50">
+                                        {{ $item['label'] }}
+                                    </span>
+
                                 </a>
                             @endif
                         @endif
                     @endforeach
-
                 </div>
 
-                <hr class="my-4 border-gray-200">
-            @endforeach
 
+                <hr x-show="open" class="my-4 border-gray-200">
+            @endforeach
         </nav>
-    </div>
-</aside>
+
+        <!-- Bottom Collapse Button -->
+        <div class="flex justify-center p-4">
+            <button @click="open = !open"
+                class="bg-white border border-gray-200 rounded-full p-2 shadow-lg hover:bg-indigo-50 transition-all flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" :class="open ? '' : 'rotate-180'"
+                    class="h-6 w-6 text-indigo-600 transition-transform duration-300" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+
+    </aside>
+
+</div>
