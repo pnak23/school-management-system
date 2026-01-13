@@ -483,69 +483,6 @@
     ];
 @endphp
 
-{{-- <aside class="relative w-64 bg-white shadow-xl h-full overflow-y-auto">
-    <div class="p-4 space-y-2">
-
-        <h2 class="text-lg font-bold text-gray-800 mb-4">
-            Menu
-        </h2>
-
-        <nav class="space-y-4">
-
-            @foreach ($sidebarMenu as $section)
-
-                <h3 class="px-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                    {{ $section['title'] }}
-                </h3>
-
-
-                <div class="space-y-1">
-                    @foreach ($section['items'] as $item)
-                        @php
-                            $isActive = request()->routeIs($item['route'] . '*');
-                            $roles = $item['roles'] ?? null; // get allowed roles
-                            $canSee = !$roles || (auth()->check() && auth()->user()->hasAnyRole($roles));
-                        @endphp
-
-                        @if ($canSee)
-                            @if ($item['route'] === 'logout')
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-                                    <button type="submit"
-                                        class="flex items-center w-full px-4 py-3 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition title-sidebar">
-                                        <svg class="h-5 w-5 mr-3" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            {!! $icons[$item['icon']] ?? $icons['arrow-left-on-rectangle'] !!}
-                                        </svg>
-                                        {{ $item['label'] }}
-                                    </button>
-                                </form>
-                            @else
-                                <a href="{{ route($item['route']) }}"
-                                    class="group flex items-center gap-3 px-4 py-3 rounded-lg
-                                   text-gray-700 hover:bg-indigo-50 hover:text-indigo-600
-                                   relative overflow-visible {{ request()->routeIs($item['route'] . '*') ? 'bg-indigo-50 text-indigo-600' : '' }}">
-                                    <svg class="h-5 w-5 shrink-0 text-gray-500 group-hover:text-indigo-600"
-                                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        {!! $icons[$item['icon']] ?? $icons['home'] !!}
-                                    </svg>
-                                    <span class="relative flex-1 min-w-0 truncate title-sidebar">
-                                        {{ $item['label'] }}
-                                    </span>
-                                </a>
-                            @endif
-                        @endif
-                    @endforeach
-
-                </div>
-
-                <hr class="my-4 border-gray-200">
-            @endforeach
-
-        </nav>
-    </div>
-</aside> --}}
-
 <!-- Sidebar Wrapper -->
 <div x-data="{ open: true }" class="flex">
 
