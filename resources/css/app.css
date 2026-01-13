@@ -26,6 +26,11 @@
 html[lang="km"] body {
     font-family: 'NotoSansKhmer', serif;
 }
+
+html, body {
+    overflow-x: hidden;
+}
+
 /* ===== NAVBAR STYLE ===== */
 
 .navbar-glass {

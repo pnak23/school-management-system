@@ -37,7 +37,7 @@
                 </a>
                 
                 <select onchange="window.location.href=this.value"
-                    class="text-sm rounded-md px-3 py-2 border-0">
+                    class="text-sm rounded-md px-4 py-2 pr-8 border-0">
                     <option value="{{ route('lang.switch', 'en') }}"
                         {{ app()->getLocale() === 'en' ? 'selected' : '' }}>
                         English
@@ -80,9 +80,9 @@
                     @if (Auth::user()->profile_picture)
                         <img src="{{ Storage::url(Auth::user()->profile_picture) }}" class="avatar-img"
                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="avatar-fallback hidden">
+                        {{-- <div class="avatar-fallback hidden">
                             {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
-                        </div>
+                        </div> --}}
                     @else
                         <div class="avatar-fallback">
                             {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
@@ -91,10 +91,10 @@
 
                     <span class="user-name">{{ Auth::user()->name }}</span>
 
-                    <svg class="w-4 h-4 text-gray-500 group-hover:text-indigo-600 transition" fill="none"
+                    {{-- <svg class="w-4 h-4 text-gray-500 group-hover:text-indigo-600 transition" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
+                    </svg> --}}
                 </div>
 
             </div>

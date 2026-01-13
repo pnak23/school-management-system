@@ -56,4 +56,8 @@ return [
     'activity_logs' => 'Activity Logs',
     'reading_logs' => 'Reading Logs',
     'logout' => 'Logout',
+
+    'about_us' => 'About Us',    
+    'contact' => 'Contact',    
+    'home' => 'Home',    
 ];

@@ -66,7 +66,7 @@
 @section('content')
 <div class="container-fluid">
     <!-- Page Header -->
-    <div class="mb-5">
+    <div class="mb-4">
         <h1 class="text-3xl font-extrabold text-gray-900">
             Library Analytics Dashboard
         </h1>
@@ -181,7 +181,7 @@
     <!-- Charts Section -->
     <div class="row">
         <!-- Line Chart - Visits by Month -->
-        <div class="col-md-12 mb-4">
+        <div class="col-md-6 mb-4">
             <div class="chart-container">
                 <div class="chart-title">Visits by Month (Trend)</div>
                 <div id="chart-line"></div>
